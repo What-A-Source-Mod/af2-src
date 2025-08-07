@@ -167,8 +167,6 @@ void CTFDiscordRPC::OnReady(const DiscordUser* user)
     
 	str = asctime(gmtime(&t));
 
-	//Fuck ctime for adding a \n at the fucking end you fucking piece of shit
-	//-Nbc66
 	str.erase(std::remove(str.begin(), str.end(), '\n'), str.end());
 
 	ConColorMsg(Color(114, 137, 218, 255), "[Rich Presence] Ready!\n");
@@ -176,7 +174,7 @@ void CTFDiscordRPC::OnReady(const DiscordUser* user)
 
 	//Yup this is literaly usless but hey it's a novelty lol
 	//-Nbc66
-	ConColorMsg(Color( 0, 255, 30, 255), "This build was compiled on %s UTC\n", str);
+	ConColorMsg(Color(0, 255, 30, 255), "This build was compiled on %s %s\n", __DATE__, __TIME__, str);
 
 	g_discordrpc.Reset();
 }
