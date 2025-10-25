@@ -33,7 +33,7 @@
 
 ConVar cl_richpresence_printmsg("cl_richpresence_printmsg", "0", FCVAR_ARCHIVE, "");
 
-#define DISCORD_APP_ID	"658004706337226791"
+#define DISCORD_APP_ID	"1431733011052761250"
 
 // update once every 10 seconds. discord has an internal rate limiter of 15 seconds as well
 #define DISCORD_UPDATE_RATE 10.0f
