@@ -1,2 +1,2 @@
-# pf2c-src
- pre-fortress 2 classic source code
+# af2-src
+ alpha-fortress 2 source code
