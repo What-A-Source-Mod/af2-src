@@ -1,0 +1,3 @@
+[submodule "game/af2"]
+	path = game/af2
+	url = https://github.com/What-A-Source-Mod/af2-gamefiles
