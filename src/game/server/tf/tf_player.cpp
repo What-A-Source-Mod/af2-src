@@ -1844,7 +1844,11 @@ void CTFPlayer::HandleCommand_JoinClass( const char *pClassName )
 				break;
 			}
 		}
-		if( i > TF_LAST_PLAYABLE_CLASS - !pf_enable_civilian.GetBool() )
+		if( i > TF_LAST_PLAYABLE_CLASS
+#if !defined( AF2_DLL )
+			- !pf_enable_civilian.GetBool()
+#endif
+			)
 		{
 			Warning( "HandleCommand_JoinClass( %s ) - invalid class name.\n", pClassName );
 			return;

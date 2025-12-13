@@ -22,7 +22,9 @@ extern ConVar pf_concuss_effect_disable;
 extern ConVar pf_aprilfools;
 extern ConVar pf_grenades;
 extern ConVar pf_delayed_knife;
+#if !defined( AF2_CLIENT_DLL ) && !defined( AF2_DLL )
 extern ConVar pf_enable_civilian;
+#endif
 extern ConVar pf_armor_enabled;
 extern ConVar pf_grenade_holstering;
 #endif

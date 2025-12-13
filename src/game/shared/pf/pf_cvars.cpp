@@ -20,5 +20,7 @@ ConVar pf_concuss_effect_disable("pf_concuss_effect_disable", "0", FCVAR_NOTIFY 
 ConVar pf_aprilfools("pf_aprilfools", "0", FCVAR_NOTIFY | FCVAR_REPLICATED, "Toggles the April Fools holiday");
 ConVar pf_grenades("pf_grenades", "1", FCVAR_NOTIFY | FCVAR_REPLICATED, "Toggle the grenades in-game");
 ConVar pf_delayed_knife( "pf_delayed_knife", "0", FCVAR_NOTIFY | FCVAR_REPLICATED, "Toggles the old delayed knife backstab" );
+#if !defined( AF2_CLIENT_DLL ) && !defined( AF2_DLL )
 ConVar pf_enable_civilian( "pf_enable_civilian", "0", FCVAR_REPLICATED | FCVAR_NOTIFY | FCVAR_CHEAT, "Enables joining civilian through join_class" );
+#endif
 ConVar pf_grenade_holstering("pf_grenade_holstering", "1", FCVAR_NOTIFY | FCVAR_REPLICATED);

@@ -28,7 +28,9 @@
 #include "tf_hud_notification_panel.h"
 
 extern IGameUIFuncs *gameuifuncs; // for key binding details
+#if !defined( AF2_CLIENT_DLL ) && !defined( AF2_DLL )
 extern ConVar pf_enable_civilian;
+#endif
 
 using namespace vgui;
 
@@ -423,15 +425,17 @@ void CTFClassMenu::OnTick( void )
 		SetVisibleButton( "CancelButton", false );
 	}
 
+#if !defined( AF2_CLIENT_DLL ) && !defined( AF2_DLL )
 	if (pf_enable_civilian.GetBool())
 	{
 		SetVisibleButton( "civilian_blue", true );
 		SetVisibleButton( "civilian_red", true );
 	}
 	else
+#endif
 	{
-		SetVisibleButton( "civilian_blue", false);
-		SetVisibleButton( "civilian_red", false);
+		SetVisibleButton( "civilian_blue", false );
+		SetVisibleButton( "civilian_red", false );
 	}
 
 	UpdateClassCounts();
