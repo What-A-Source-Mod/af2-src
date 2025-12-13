@@ -1000,7 +1000,13 @@ int CHLClient::Init( CreateInterfaceFn appSystemFactory, CreateInterfaceFn physi
 #endif
 
 	// Folder must be named pf2c to operate properly
-	if (Q_strcmp( COM_GetModDirectory(), "pf2c" ) && Q_strcmp( COM_GetModDirectory(), "pf2beta" ))
+	if (
+#ifdef AF2_CLIENT_DLL
+		Q_strcmp( COM_GetModDirectory(), "af2" )
+#else
+		Q_strcmp( COM_GetModDirectory(), "pf2c" ) && Q_strcmp( COM_GetModDirectory(), "pf2beta" )
+#endif // AF2_CLIENT_DLL
+		)
 	{
 		ConColorMsg( Color( 60, 238, 60, 255 ), "%s\n", COM_GetModDirectory() );
 		Error( "Error! The game's directory must have the exact name \"pf2c\" in order for the mod to work correctly. Please change it." );
